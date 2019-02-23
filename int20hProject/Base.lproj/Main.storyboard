@@ -122,31 +122,6 @@
             </objects>
             <point key="canvasLocation" x="2697" y="107"/>
         </scene>
-        <!--Food-->
-        <scene sceneID="Gt7-CP-7HC">
-            <objects>
-                <viewController id="7km-Wf-EXX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UHe-Uj-j3c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op5-Wt-qnl">
-                                <rect key="frame" x="166" y="323" width="11" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="md1-Og-l1m"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Food" image="List" id="v4j-1e-n3B"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EQx-P6-34c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2696.8000000000002" y="798.35082458770626"/>
-        </scene>
         <!--Today-->
         <scene sceneID="VHM-SL-FSh">
             <objects>
@@ -416,7 +391,6 @@
                     <connections>
                         <segue destination="gn3-zV-5IG" kind="relationship" relationship="viewControllers" id="V0x-ny-U6c"/>
                         <segue destination="XXU-UW-epP" kind="relationship" relationship="viewControllers" id="5Ev-fB-Z7Y"/>
-                        <segue destination="7km-Wf-EXX" kind="relationship" relationship="viewControllers" id="QRi-m4-1ID"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKb-IY-htY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,7 +400,6 @@
     </scenes>
     <resources>
         <image name="Add" width="37.5" height="37.5"/>
-        <image name="List" width="37.5" height="37.5"/>
         <image name="Today-inactive" width="37.5" height="37.5"/>
         <image name="bg-auth" width="375" height="812"/>
     </resources>
