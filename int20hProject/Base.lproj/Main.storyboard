@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="-65" y="-258"/>
         </scene>
-        <!--Item 2-->
+        <!--Add-->
         <scene sceneID="mlw-2B-yty">
             <objects>
                 <viewController id="XXU-UW-epP" sceneMemberID="viewController">
@@ -116,13 +116,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VmU-dQ-cLc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Qo2-Wu-bdT"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="Add" id="Qo2-Wu-bdT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4c-dz-2U7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2697" y="107"/>
         </scene>
-        <!--Item-->
+        <!--Food-->
         <scene sceneID="Gt7-CP-7HC">
             <objects>
                 <viewController id="7km-Wf-EXX" sceneMemberID="viewController">
@@ -141,13 +141,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="md1-Og-l1m"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="v4j-1e-n3B"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="List" id="v4j-1e-n3B"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQx-P6-34c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2696.8000000000002" y="798.35082458770626"/>
         </scene>
-        <!--Item 1-->
+        <!--Today-->
         <scene sceneID="VHM-SL-FSh">
             <objects>
                 <viewController id="gn3-zV-5IG" sceneMemberID="viewController">
@@ -162,11 +162,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO4-U9-OCt">
+                                <rect key="frame" x="313" y="68" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-kh-pvy">
+                                <rect key="frame" x="16" y="68" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjY-If-WV4">
+                                <rect key="frame" x="16" y="32" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hOr-1b-Ozn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="EgA-XP-kOa"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="Today-inactive" selectedImage="Today-inactive" id="EgA-XP-kOa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXO-yc-rxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,6 +199,12 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RBo-Cn-86O">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.31764705882352939" green="0.62352941176470589" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.31764705879999999" green="0.62352941179999999" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="gn3-zV-5IG" kind="relationship" relationship="viewControllers" id="V0x-ny-U6c"/>
@@ -193,6 +218,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="37.5" height="37.5"/>
+        <image name="List" width="37.5" height="37.5"/>
+        <image name="Today-inactive" width="37.5" height="37.5"/>
         <image name="bg-auth" width="375" height="812"/>
     </resources>
 </document>
