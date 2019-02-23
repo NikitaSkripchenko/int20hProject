@@ -53,7 +53,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKM-wP-tL9"/>
-                                    <segue destination="w7n-wW-p1y" kind="show" id="ErJ-MD-h2l"/>
+                                    <segue destination="w7n-wW-p1y" kind="show" id="hae-Di-0ub"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueO-bq-kh0">
@@ -252,7 +252,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sendUserData:" destination="w7n-wW-p1y" eventType="touchUpInside" id="SIR-tl-NtO"/>
-                                    <segue destination="jKj-qA-NGm" kind="show" id="how-KH-i6a"/>
+                                    <segue destination="jKj-qA-NGm" kind="show" id="ftb-ee-EFK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Gc-yG-oJY">
