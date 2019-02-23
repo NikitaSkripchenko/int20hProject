@@ -12,6 +12,7 @@
 		8FEEC1A1222019C90064E021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEC19F222019C90064E021 /* Main.storyboard */; };
 		8FEEC1A3222019CA0064E021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEC1A2222019CA0064E021 /* Assets.xcassets */; };
 		8FEEC1A6222019CA0064E021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEC1A4222019CA0064E021 /* LaunchScreen.storyboard */; };
+		9E2565142221C20D00266C94 /* CalculateUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2565132221C20D00266C94 /* CalculateUserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8FEEC1A2222019CA0064E021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FEEC1A5222019CA0064E021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FEEC1A7222019CA0064E021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E2565132221C20D00266C94 /* CalculateUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateUserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				8FEEC19B222019C90064E021 /* AppDelegate.swift */,
 				8FEEC19D222019C90064E021 /* ViewController.swift */,
+				9E2565132221C20D00266C94 /* CalculateUserData.swift */,
 				8FEEC19F222019C90064E021 /* Main.storyboard */,
 				8FEEC1A2222019CA0064E021 /* Assets.xcassets */,
 				8FEEC1A4222019CA0064E021 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E2565142221C20D00266C94 /* CalculateUserData.swift in Sources */,
 				8FEEC19E222019C90064E021 /* ViewController.swift in Sources */,
 				8FEEC19C222019C90064E021 /* AppDelegate.swift in Sources */,
 			);
