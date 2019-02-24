@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARKit
 
 class SearchViewController: UIViewController {
     
@@ -85,12 +86,14 @@ class SearchViewController: UIViewController {
         cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
         tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
-    @objc func handleSearchWithPhoto(){
-        print("Hi")
-    }
     
+    @objc func handleSearchWithPhoto(){
+        let vc = CameraViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @objc func handleAddButton(){
-        print("Hi")
+        
+        
     }
     @IBOutlet weak var tableViewX: UITableView!
     @IBOutlet weak var searchBarX: UISearchBar!
