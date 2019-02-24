@@ -64,7 +64,6 @@ class SearchViewController: UIViewController {
         addButton.setTitle("Add custom product", for: .normal)
         addButton.titleLabel?.textColor = .white
         addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
         footer.addSubview(addButton)
         
@@ -72,7 +71,7 @@ class SearchViewController: UIViewController {
         addButton.topAnchor.constraint(equalTo: footer.topAnchor).isActive = true
         addButton.bottomAnchor.constraint(equalTo: footer.bottomAnchor).isActive = true
         addButton.rightAnchor.constraint(equalTo: footer.rightAnchor).isActive = true
-        
+         addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
         footer.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
         tableViewX.tableFooterView = footer
@@ -93,10 +92,6 @@ class SearchViewController: UIViewController {
         present(vc,
                 animated: true,
             completion: nil)
-    }
-    @objc func handleAddButton(){
-        
-        
     }
     @IBOutlet weak var tableViewX: UITableView!
     @IBOutlet weak var searchBarX: UISearchBar!
@@ -127,52 +122,12 @@ class SearchViewController: UIViewController {
         }
     }
     
-    private let url = URL(string: "https://192.168.43.125:8888/products.search")!
-    
-    
-    func toJson(_ searchString: String) -> Data{
-        let map = [
-            "token": "5535daa0-502d-4066-b546-f127804c6196",
-            "name": searchString
-        ]
-        let encoder = JSONEncoder()
-        var encodedMap = Data()
-        do {
-        encodedMap = try encoder.encode(map)
-        } catch {
-            
-        }
-        return encodedMap
+    func iTunesURL(_ searchString: String) -> URL{
+        let encodedString = searchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@", encodedString)
+        let url = URL(string: urlString)
+        return url!
     }
-    
-    func httpPost(jsonData: Data) {
-        if !jsonData.isEmpty {
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.httpBody = jsonData
-            
-            URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
-                NSLog("open tasks: \(openTasks)")
-            }
-            
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (responseData: Data?, response: URLResponse?, error: Error?) in
-                NSLog("\(response)")
-            })
-            task.resume()
-        }
-    }
-    
-//    func iTunesURL(_ searchString: String) -> URL{
-//        let encodedString = searchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-//        let urlString = String(format: "https://192.168.43.125:8888/products.search")
-//        print(urlString)
-//        let url = URL(string: urlString)
-//
-//        let encoder = JSONEncoder()
-//        )
-//
-//        task.resume()
-//    }
 
     func parse(_ data: Data) -> [SearchResult]{
         do {
@@ -205,20 +160,19 @@ extension SearchViewController: UISearchBarDelegate{
             tableViewX.reloadData()
             hasSearched = true
             searchResults = []
-            //let queue = DispatchQueue.global()
-            //let url = self.toJson(searchBarX.text!)
-//            queue.async {
-//                if let data = self.performStoreRequest(with: url) {
-//                    self.searchResults = self.parse(data)
-//                    self.searchResults.sort(by: <)
-//                    DispatchQueue.main.async {
-//                        self.isLoading = false
-//                        self.tableViewX.reloadData()
-//                    }
-//
-//                    return
-//                }
-            //}
+            let queue = DispatchQueue.global()
+            let url = self.iTunesURL(searchBarX.text!)
+            queue.async {
+                if let data = self.performStoreRequest(with: url) {
+                    self.searchResults = self.parse(data)
+                    self.searchResults.sort(by: <)
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                        self.tableViewX.reloadData()
+                    }
+                    return
+                }
+            }
         }
     }
 }
