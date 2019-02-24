@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
             static let loadingCell = "LoadingCell"
         }
     }
+    let defaultHeight: CGFloat = 90
     var searchResults = [SearchResult]()
     var hasSearched = false
     var isLoading = false
@@ -140,7 +141,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return defaultHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
