@@ -22,14 +22,57 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = .white
         searchBar.becomeFirstResponder()
 
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        header.backgroundColor = .green
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        
+        let headerIcon = UIImageView(image: UIImage(named: "searchBar-camera"))
+        headerIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        let searchWithPhotoButton = UIButton()
+        searchWithPhotoButton.setTitle("Add photo of product", for: .normal)
+        searchWithPhotoButton.titleLabel?.textAlignment = .center
+        searchWithPhotoButton.tintColor = .black
+        searchWithPhotoButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+       header.addSubview(searchWithPhotoButton)
+        
+        searchWithPhotoButton.topAnchor.constraint(equalTo: header.topAnchor).isActive = true
+        searchWithPhotoButton.bottomAnchor.constraint(equalTo: header.bottomAnchor).isActive = true
+        searchWithPhotoButton.leftAnchor.constraint(equalTo: header.leftAnchor).isActive = true
+        searchWithPhotoButton.rightAnchor.constraint(equalTo: header.rightAnchor).isActive = true
+        searchWithPhotoButton.addTarget(self, action: #selector(handleSearchWithPhoto), for: .touchUpInside)
+        
+        searchWithPhotoButton.addSubview(headerIcon)
+        headerIcon.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 10).isActive = true
+        headerIcon.centerYAnchor.constraint(equalTo: header.centerYAnchor).isActive = true
+        headerIcon.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        headerIcon.heightAnchor.constraint(equalToConstant: 25).isActive = true
+
+        header.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
+        
         tableView.tableHeaderView = header
         
-      let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        footer.backgroundColor = .green
+      let footer = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        
+        let addButton = UIButton()
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        addButton.setTitle("Add custom product", for: .normal)
+        addButton.titleLabel?.textColor = .white
+        addButton.titleLabel?.textAlignment = .center
+        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
+        
+        footer.addSubview(addButton)
+        
+        addButton.leftAnchor.constraint(equalTo: footer.leftAnchor).isActive = true
+        addButton.topAnchor.constraint(equalTo: footer.topAnchor).isActive = true
+        addButton.bottomAnchor.constraint(equalTo: footer.bottomAnchor).isActive = true
+        addButton.rightAnchor.constraint(equalTo: footer.rightAnchor).isActive = true
+        
+        
+        footer.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
         tableView.tableFooterView = footer
         
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -43,6 +86,13 @@ class SearchViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
     
+    @objc func handleSearchWithPhoto(){
+        print("Hi")
+    }
+    
+    @objc func handleAddButton(){
+        print("Hi")
+    }
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
