@@ -64,7 +64,6 @@ class SearchViewController: UIViewController {
         addButton.setTitle("Add custom product", for: .normal)
         addButton.titleLabel?.textColor = .white
         addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
         footer.addSubview(addButton)
         
@@ -72,7 +71,7 @@ class SearchViewController: UIViewController {
         addButton.topAnchor.constraint(equalTo: footer.topAnchor).isActive = true
         addButton.bottomAnchor.constraint(equalTo: footer.bottomAnchor).isActive = true
         addButton.rightAnchor.constraint(equalTo: footer.rightAnchor).isActive = true
-        
+         addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
         footer.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
         tableViewX.tableFooterView = footer
@@ -87,13 +86,13 @@ class SearchViewController: UIViewController {
         tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
     
+    @objc func handleAddButton(){
+       
+    }
+    
     @objc func handleSearchWithPhoto(){
         let vc = CameraViewController()
         navigationController?.pushViewController(vc, animated: true)
-    }
-    @objc func handleAddButton(){
-        
-        
     }
     @IBOutlet weak var tableViewX: UITableView!
     @IBOutlet weak var searchBarX: UISearchBar!

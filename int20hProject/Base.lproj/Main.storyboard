@@ -246,41 +246,44 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VkT-d9-vAf">
-                                <rect key="frame" x="159" y="297" width="25" height="200"/>
+                                <rect key="frame" x="159" y="297" width="50" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pV-z6-hnk">
-                                        <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="NeT-2i-vfs"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-8M-WeO">
-                                        <rect key="frame" x="0.0" y="34" width="25" height="30"/>
+                                        <rect key="frame" x="0.0" y="34" width="50" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcU-K1-tdy">
-                                        <rect key="frame" x="0.0" y="68" width="25" height="30"/>
+                                        <rect key="frame" x="0.0" y="68" width="50" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Gc-yG-oJY">
-                                        <rect key="frame" x="0.0" y="102" width="25" height="30"/>
+                                        <rect key="frame" x="0.0" y="102" width="50" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSP-VN-9NQ">
-                                        <rect key="frame" x="0.0" y="136" width="25" height="30"/>
+                                        <rect key="frame" x="0.0" y="136" width="50" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOS-iG-9Tu">
-                                        <rect key="frame" x="0.0" y="170" width="25" height="30"/>
+                                        <rect key="frame" x="0.0" y="170" width="50" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -366,13 +369,13 @@
                         <viewLayoutGuide key="safeArea" id="HZr-SC-oDk"/>
                     </view>
                     <connections>
-                        <outlet property="carbohydratesValue" destination="0Gc-yG-oJY" id="pCP-3c-Vsb"/>
+                        <outlet property="carbohydratesValue" destination="TOS-iG-9Tu" id="fC5-A6-d5T"/>
                         <outlet property="fatValue" destination="jcU-K1-tdy" id="aQr-sl-9KQ"/>
                         <outlet property="genderPicker" destination="f0E-BP-NkD" id="Xan-HO-LyH"/>
-                        <outlet property="kilocalories" destination="TOS-iG-9Tu" id="M7k-QC-DE5"/>
+                        <outlet property="kcalValue" destination="tSP-VN-9NQ" id="C41-5i-cko"/>
                         <outlet property="proteinValue" destination="7pV-z6-hnk" id="8g7-fo-cRl"/>
                         <outlet property="saltValue" destination="gMM-8M-WeO" id="ATF-Dc-Yxn"/>
-                        <outlet property="sugarValue" destination="tSP-VN-9NQ" id="qSR-G5-DFy"/>
+                        <outlet property="sugarValue" destination="0Gc-yG-oJY" id="TPJ-2P-hXq"/>
                         <outlet property="userAge" destination="lqK-gW-flg" id="GIV-bQ-1lH"/>
                         <outlet property="userHeight" destination="7VS-i9-LVg" id="C2B-US-a6E"/>
                         <outlet property="userWeight" destination="Sh5-wi-GqG" id="SAl-OF-iPB"/>

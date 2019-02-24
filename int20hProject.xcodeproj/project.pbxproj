@@ -22,6 +22,7 @@
 		9E25652522223E2C00266C94 /* FoodScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E25652422223E2C00266C94 /* FoodScene.sks */; };
 		9E256527222240D000266C94 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E256526222240D000266C94 /* CameraViewController.swift */; };
 		9E256529222242CA00266C94 /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E256528222242CA00266C94 /* ImageInformationViewController.swift */; };
+		9E55F631222274960016F5A4 /* AddHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55F630222274960016F5A4 /* AddHandlerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9E25652422223E2C00266C94 /* FoodScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodScene.sks; sourceTree = "<group>"; };
 		9E256526222240D000266C94 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9E256528222242CA00266C94 /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageInformationViewController.swift; path = int20hProject/ImageInformationViewController.swift; sourceTree = "<group>"; };
+		9E55F630222274960016F5A4 /* AddHandlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHandlerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				9E2565152221F5E300266C94 /* SearchViewController.swift */,
 				9E25652422223E2C00266C94 /* FoodScene.sks */,
 				9E2565172221F62700266C94 /* SearchResultCell.swift */,
+				9E55F630222274960016F5A4 /* AddHandlerViewController.swift */,
 				8FEEC19F222019C90064E021 /* Main.storyboard */,
 				8FEEC1A2222019CA0064E021 /* Assets.xcassets */,
 				8FEEC1A4222019CA0064E021 /* LaunchScreen.storyboard */,
@@ -180,6 +183,7 @@
 				9E2565142221C20D00266C94 /* CalculateUserData.swift in Sources */,
 				9E2565162221F5E300266C94 /* SearchViewController.swift in Sources */,
 				9E2565212221FBF300266C94 /* SearchResultModel.swift in Sources */,
+				9E55F631222274960016F5A4 /* AddHandlerViewController.swift in Sources */,
 				9E2565182221F62700266C94 /* SearchResultCell.swift in Sources */,
 				8FEEC19E222019C90064E021 /* ViewController.swift in Sources */,
 				9E256527222240D000266C94 /* CameraViewController.swift in Sources */,
