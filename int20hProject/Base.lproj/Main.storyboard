@@ -139,7 +139,7 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                                 <connections>
-                                    <outlet property="delegate" destination="gn3-zV-5IG" id="3st-qT-Rx2"/>
+                                    <outlet property="delegate" destination="gn3-zV-5IG" id="ZZH-KB-9K5"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="arp-WK-EDz">
@@ -157,7 +157,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="gn3-zV-5IG" id="QEv-9A-39e"/>
+                                    <outlet property="dataSource" destination="gn3-zV-5IG" id="wMw-fq-DXZ"/>
+                                    <outlet property="delegate" destination="gn3-zV-5IG" id="xHR-4x-tAS"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -166,21 +167,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="Today-inactive" selectedImage="Today-inactive" id="EgA-XP-kOa"/>
                     <connections>
-                        <outlet property="searchBar" destination="VwW-pb-Fi3" id="Gqy-Jl-nWE"/>
-                        <outlet property="searchDisplayController" destination="RP1-rA-IJ3" id="QXf-FC-DT0"/>
-                        <outlet property="tableView" destination="arp-WK-EDz" id="MIW-jW-Ujo"/>
+                        <outlet property="searchBarX" destination="VwW-pb-Fi3" id="8Da-AE-lNn"/>
+                        <outlet property="tableViewX" destination="arp-WK-EDz" id="cLA-NZ-eQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXO-yc-rxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="RP1-rA-IJ3">
-                    <connections>
-                        <outlet property="delegate" destination="gn3-zV-5IG" id="2x0-Zz-vUn"/>
-                        <outlet property="searchBar" destination="VwW-pb-Fi3" id="NXO-IM-GSZ"/>
-                        <outlet property="searchContentsController" destination="gn3-zV-5IG" id="fMx-Ha-wfY"/>
-                        <outlet property="searchResultsDataSource" destination="gn3-zV-5IG" id="mo6-xe-AAG"/>
-                        <outlet property="searchResultsDelegate" destination="gn3-zV-5IG" id="JkW-up-L5G"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="RP1-rA-IJ3"/>
             </objects>
             <point key="canvasLocation" x="2696.8000000000002" y="-583.3583208395803"/>
         </scene>

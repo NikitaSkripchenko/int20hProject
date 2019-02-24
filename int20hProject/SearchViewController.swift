@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
     struct TableView {
         struct CellIdentifiers {
             static let searchResultCell = "SearchResultCell"
@@ -22,8 +23,8 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = .white
-        searchBar.becomeFirstResponder()
+        tableViewX.backgroundColor = .white
+        searchBarX.becomeFirstResponder()
 
         let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         
@@ -53,7 +54,7 @@ class SearchViewController: UIViewController {
 
         header.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
         
-        tableView.tableHeaderView = header
+        tableViewX.tableHeaderView = header
         
       let footer = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         
@@ -73,19 +74,17 @@ class SearchViewController: UIViewController {
         
         
         footer.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
-        tableView.tableFooterView = footer
-        
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
+        tableViewX.tableFooterView = footer
+        searchBarX.becomeFirstResponder()
+
         var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
+        tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
         cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
-        
+        tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+
         cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
+        tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
-    
     @objc func handleSearchWithPhoto(){
         print("Hi")
     }
@@ -93,10 +92,9 @@ class SearchViewController: UIViewController {
     @objc func handleAddButton(){
         print("Hi")
     }
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewX: UITableView!
+    @IBOutlet weak var searchBarX: UISearchBar!
     
-    @IBOutlet weak var searchBar: UISearchBar!
-   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -154,22 +152,22 @@ class SearchViewController: UIViewController {
 
 
 extension SearchViewController: UISearchBarDelegate{
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if !searchBar.text!.isEmpty{
-            searchBar.resignFirstResponder()
+    func searchBarSearchButtonClicked(_ searchBarX: UISearchBar) {
+        if !searchBarX.text!.isEmpty{
+            searchBarX.resignFirstResponder()
             isLoading = true
-            tableView.reloadData()
+            tableViewX.reloadData()
             hasSearched = true
             searchResults = []
             let queue = DispatchQueue.global()
-            let url = self.iTunesURL(searchBar.text!)
+            let url = self.iTunesURL(searchBarX.text!)
             queue.async {
                 if let data = self.performStoreRequest(with: url) {
                     self.searchResults = self.parse(data)
                     self.searchResults.sort(by: <)
                     DispatchQueue.main.async {
                         self.isLoading = false
-                        self.tableView.reloadData()
+                        self.tableViewX.reloadData()
                     }
                     return
                 }
@@ -194,7 +192,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        searchBar.resignFirstResponder()
+        searchBarX.resignFirstResponder()
         if isLoading{
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingCell, for: indexPath)
             let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
