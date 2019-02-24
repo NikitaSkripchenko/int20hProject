@@ -11,8 +11,7 @@ struct ImageInformation {
 }
 
 class CameraViewController: UIViewController,ARSKViewDelegate {
-    var sceneView: ARSKView!
-    
+    var sceneView = ARSKView()
     
     var selectedImage : ImageInformation?
     
@@ -23,17 +22,13 @@ class CameraViewController: UIViewController,ARSKViewDelegate {
         super.viewDidLoad()
         
         view.addSubview(sceneView)
-    
-        sceneView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        sceneView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        sceneView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         sceneView.delegate = self
         sceneView.showsFPS = true
         sceneView.showsNodeCount = true
         
         if let scene = SKScene(fileNamed: "Scene") {
+            print("\(scene)")
             sceneView.presentScene(scene)
         }
         
@@ -44,6 +39,7 @@ class CameraViewController: UIViewController,ARSKViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = referenceImages
         
+        print("sdds")
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
@@ -57,28 +53,28 @@ class CameraViewController: UIViewController,ARSKViewDelegate {
             
             self.selectedImage = scannedImage
             
-            self.performSegue(withIdentifier: "showImageInformation", sender: self)
-            
-            return imageSeenMarker()
+//            self.performSegue(withIdentifier: "showImageInformation", sender: self)
+//
+//            return imageSeenMarker()
         }
         
         return nil
     }
     
-    private func imageSeenMarker() -> SKLabelNode {
-        let labelNode = SKLabelNode(text: "✅")
-        labelNode.horizontalAlignmentMode = .center
-        labelNode.verticalAlignmentMode = .center
-        
-        return labelNode
-    }
+//    private func imageSeenMarker() -> SKLabelNode {
+//        let labelNode = SKLabelNode(text: "✅")
+//        labelNode.horizontalAlignmentMode = .center
+//        labelNode.verticalAlignmentMode = .center
+//
+//        return labelNode
+//    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showImageInformation"{
-            if let imageInformationVC = segue.destination as? ImageInformationViewController,
-                let actualSelectedImage = selectedImage {
-                imageInformationVC.imageInformation = actualSelectedImage
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showImageInformation"{
+//            if let imageInformationVC = segue.destination as? ImageInformationViewController,
+//                let actualSelectedImage = selectedImage {
+//                imageInformationVC.imageInformation = actualSelectedImage
+//            }
+//        }
+//    }
 }

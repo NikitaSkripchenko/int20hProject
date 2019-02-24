@@ -87,9 +87,12 @@ class SearchViewController: UIViewController {
         tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
     
+
     @objc func handleSearchWithPhoto(){
         let vc = CameraViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        present(vc,
+                animated: true,
+            completion: nil)
     }
     @objc func handleAddButton(){
         
@@ -124,12 +127,52 @@ class SearchViewController: UIViewController {
         }
     }
     
-    func iTunesURL(_ searchString: String) -> URL{
-        let encodedString = searchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@", encodedString)
-        let url = URL(string: urlString)
-        return url!
+    private let url = URL(string: "https://192.168.43.125:8888/products.search")!
+    
+    
+    func toJson(_ searchString: String) -> Data{
+        let map = [
+            "token": "5535daa0-502d-4066-b546-f127804c6196",
+            "name": searchString
+        ]
+        let encoder = JSONEncoder()
+        var encodedMap = Data()
+        do {
+        encodedMap = try encoder.encode(map)
+        } catch {
+            
+        }
+        return encodedMap
     }
+    
+    func httpPost(jsonData: Data) {
+        if !jsonData.isEmpty {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = jsonData
+            
+            URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
+                NSLog("open tasks: \(openTasks)")
+            }
+            
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (responseData: Data?, response: URLResponse?, error: Error?) in
+                NSLog("\(response)")
+            })
+            task.resume()
+        }
+    }
+    
+//    func iTunesURL(_ searchString: String) -> URL{
+//        let encodedString = searchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+//        let urlString = String(format: "https://192.168.43.125:8888/products.search")
+//        print(urlString)
+//        let url = URL(string: urlString)
+//
+//        let encoder = JSONEncoder()
+//        )
+//
+//        task.resume()
+//    }
 
     func parse(_ data: Data) -> [SearchResult]{
         do {
@@ -162,19 +205,20 @@ extension SearchViewController: UISearchBarDelegate{
             tableViewX.reloadData()
             hasSearched = true
             searchResults = []
-            let queue = DispatchQueue.global()
-            let url = self.iTunesURL(searchBarX.text!)
-            queue.async {
-                if let data = self.performStoreRequest(with: url) {
-                    self.searchResults = self.parse(data)
-                    self.searchResults.sort(by: <)
-                    DispatchQueue.main.async {
-                        self.isLoading = false
-                        self.tableViewX.reloadData()
-                    }
-                    return
-                }
-            }
+            //let queue = DispatchQueue.global()
+            //let url = self.toJson(searchBarX.text!)
+//            queue.async {
+//                if let data = self.performStoreRequest(with: url) {
+//                    self.searchResults = self.parse(data)
+//                    self.searchResults.sort(by: <)
+//                    DispatchQueue.main.async {
+//                        self.isLoading = false
+//                        self.tableViewX.reloadData()
+//                    }
+//
+//                    return
+//                }
+            //}
         }
     }
 }

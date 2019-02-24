@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F18480222224FDE004A137E /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18480122224FDE004A137E /* Scene.swift */; };
+		8F18480622225355004A137E /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8F18480522225355004A137E /* Scene.sks */; };
 		8FEEC19C222019C90064E021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEC19B222019C90064E021 /* AppDelegate.swift */; };
 		8FEEC19E222019C90064E021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEC19D222019C90064E021 /* ViewController.swift */; };
 		8FEEC1A1222019C90064E021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEC19F222019C90064E021 /* Main.storyboard */; };
@@ -19,12 +21,13 @@
 		9E25651C2221FB1B00266C94 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E25651A2221FB1B00266C94 /* SearchResultCell.xib */; };
 		9E25651E2221FB2200266C94 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E25651D2221FB2200266C94 /* LoadingCell.xib */; };
 		9E2565212221FBF300266C94 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2565202221FBF300266C94 /* SearchResultModel.swift */; };
-		9E25652522223E2C00266C94 /* FoodScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E25652422223E2C00266C94 /* FoodScene.sks */; };
 		9E256527222240D000266C94 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E256526222240D000266C94 /* CameraViewController.swift */; };
 		9E256529222242CA00266C94 /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E256528222242CA00266C94 /* ImageInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F18480122224FDE004A137E /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		8F18480522225355004A137E /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Scene.sks; path = ../../../Documents/ARMuseum/ARMuseum/Scene.sks; sourceTree = "<group>"; };
 		8FEEC198222019C90064E021 /* int20hProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = int20hProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEEC19B222019C90064E021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FEEC19D222019C90064E021 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +42,6 @@
 		9E25651A2221FB1B00266C94 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		9E25651D2221FB2200266C94 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		9E2565202221FBF300266C94 /* SearchResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
-		9E25652422223E2C00266C94 /* FoodScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FoodScene.sks; sourceTree = "<group>"; };
 		9E256526222240D000266C94 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9E256528222242CA00266C94 /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageInformationViewController.swift; path = int20hProject/ImageInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +85,8 @@
 				9E25651A2221FB1B00266C94 /* SearchResultCell.xib */,
 				9E2565132221C20D00266C94 /* CalculateUserData.swift */,
 				9E2565152221F5E300266C94 /* SearchViewController.swift */,
-				9E25652422223E2C00266C94 /* FoodScene.sks */,
+				8F18480522225355004A137E /* Scene.sks */,
+				8F18480122224FDE004A137E /* Scene.swift */,
 				9E2565172221F62700266C94 /* SearchResultCell.swift */,
 				8FEEC19F222019C90064E021 /* Main.storyboard */,
 				8FEEC1A2222019CA0064E021 /* Assets.xcassets */,
@@ -160,12 +163,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E25652522223E2C00266C94 /* FoodScene.sks in Resources */,
 				9E25651B2221FB1B00266C94 /* NothingFoundCell.xib in Resources */,
 				9E25651C2221FB1B00266C94 /* SearchResultCell.xib in Resources */,
 				9E25651E2221FB2200266C94 /* LoadingCell.xib in Resources */,
 				8FEEC1A6222019CA0064E021 /* LaunchScreen.storyboard in Resources */,
 				8FEEC1A3222019CA0064E021 /* Assets.xcassets in Resources */,
+				8F18480622225355004A137E /* Scene.sks in Resources */,
 				8FEEC1A1222019C90064E021 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +188,7 @@
 				9E256527222240D000266C94 /* CameraViewController.swift in Sources */,
 				8FEEC19C222019C90064E021 /* AppDelegate.swift in Sources */,
 				9E256529222242CA00266C94 /* ImageInformationViewController.swift in Sources */,
+				8F18480222224FDE004A137E /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
