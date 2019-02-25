@@ -71,7 +71,7 @@ class SearchViewController: UIViewController {
         addButton.topAnchor.constraint(equalTo: footer.topAnchor).isActive = true
         addButton.bottomAnchor.constraint(equalTo: footer.bottomAnchor).isActive = true
         addButton.rightAnchor.constraint(equalTo: footer.rightAnchor).isActive = true
-         addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
         
         footer.backgroundColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
         tableViewX.tableFooterView = footer
@@ -86,6 +86,12 @@ class SearchViewController: UIViewController {
         tableViewX.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
     
+    
+    @objc func handleAddButton(){
+        
+    }
+    
+   
 
     @objc func handleSearchWithPhoto(){
         let vc = CameraViewController()
@@ -100,8 +106,118 @@ class SearchViewController: UIViewController {
         return 1
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = descViewController()
+        
+        present(vc, animated: true, completion: nil)
+        
         tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    class descViewController: UIViewController{
+        let descriptionImageView: UIImageView={
+            let iv = UIImageView(image: UIImage(named: "apple"))
+            iv.translatesAutoresizingMaskIntoConstraints = false
+            iv.contentMode = .scaleAspectFill
+            
+            return iv
+        }()
+        
+        let name: UILabel={
+           let n = UILabel()
+            n.text = "Яблоко"
+            n.font = UIFont.systemFont(ofSize: 30)
+            n.translatesAutoresizingMaskIntoConstraints = false
+            return n
+        }()
+        
+        let descTextView:UITextView={
+           let tv = UITextView()
+            tv.text = "Яблоко — їстивний плід яблуні, соковитий, багатий на вітаміни та мікроелементи.Фрукт вагою 70—200 грам, що вживається в їжу в свіжому, квашеному, печеному вигляді, є сировиною в кулінарії, у виробництві дитячого харчування, джемів, повидла, безалкогольних та алкогольних напоїв тощо"
+            tv.font = UIFont.systemFont(ofSize: 15)
+            tv.textAlignment = .justified
+            tv.translatesAutoresizingMaskIntoConstraints = false
+            tv.isEditable = false
+            tv.isSelectable = false
+            return tv
+        }()
+        
+        let kcal: UILabel = {
+            let l = UILabel()
+            l.text = "К-кал: 60"
+            l.translatesAutoresizingMaskIntoConstraints = false
+            return l
+        }()
+        
+        let protein: UILabel = {
+            let l = UILabel()
+            l.text = "Білкі  в: 5"
+            l.translatesAutoresizingMaskIntoConstraints = false
+            return l
+        }()
+        
+        
+        let uglevodi: UILabel={
+            let l = UILabel()
+            l.text = "Вуглеводів: 5"
+            l.translatesAutoresizingMaskIntoConstraints = false
+            return l
+        }()
+        
+        let word: UILabel = {
+           let l = UILabel()
+            l.text = "Дозволено вживати"
+            l.font = UIFont.systemFont(ofSize: 20)
+            l.textColor = #colorLiteral(red: 0.3792193532, green: 0.6708514094, blue: 0, alpha: 1)
+            l.translatesAutoresizingMaskIntoConstraints = false
+            return l
+        }()
+        
+        let dismissButton: UIButton={
+           let b = UIButton()
+            b.titleLabel?.text = "Назад"
+            b.translatesAutoresizingMaskIntoConstraints = false
+            return b
+        }()
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            view.backgroundColor = .white
+            view.addSubview(descriptionImageView)
+            view.addSubview(name)
+            view.addSubview(descTextView)
+            view.addSubview(word)
+            view.addSubview(dismissButton)
+            view.addSubview(kcal)
+            view.addSubview(protein)
+            view.addSubview(uglevodi)
+            
+            descriptionImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            descriptionImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            descriptionImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+            descriptionImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            
+            name.topAnchor.constraint(equalTo: descriptionImageView.bottomAnchor, constant: 12).isActive = true
+            name.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            
+            descTextView.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 3).isActive = true
+            descTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            descTextView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -20).isActive = true
+            descTextView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+            
+            word.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            word.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+           
+            kcal.topAnchor.constraint(equalTo: descTextView.bottomAnchor, constant: 3).isActive = true
+            kcal.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            
+            protein.topAnchor.constraint(equalTo: kcal.bottomAnchor, constant: 3).isActive = true
+            protein.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            
+            uglevodi.topAnchor.constraint(equalTo: protein.bottomAnchor, constant: 3).isActive = true
+            uglevodi.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        }
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -191,6 +307,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         searchBarX.resignFirstResponder()
